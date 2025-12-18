@@ -20,7 +20,7 @@ import dev.nextftc.ftc.NextFTCOpMode;
 public class CommandsBlue extends NextFTCOpMode {
     // Pretty self-explanatory, mess around with this values if the robot takes too much time shooting
     // Delay is always in seconds.
-    private static final double TIME_TO_SHOOT_PRELOAD = 4;
+    private static final double TIME_TO_SHOOT_PRELOAD = 4; /// HMMMM why not js make it a int
     private static final double TIME_TO_SHOOT_PPG = 4;
     private static final double TIME_TO_SHOOT_PGP = 4;
     private static final double TIME_TO_SHOOT_GPP = 4;

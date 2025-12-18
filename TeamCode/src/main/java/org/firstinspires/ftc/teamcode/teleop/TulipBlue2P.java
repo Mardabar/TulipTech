@@ -10,6 +10,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
 import org.firstinspires.ftc.teamcode.Pedro.Constants;
+import org.firstinspires.ftc.teamcode.Subsystem.Drive;
 import org.firstinspires.ftc.teamcode.Subsystem.Intake;
 import org.firstinspires.ftc.teamcode.Subsystem.Shooter;
 
@@ -39,6 +40,8 @@ public class TulipBlue2P extends OpMode {
         follower.setStartingPose(startingPose);
         follower.update();
 
+
+
         shooter = new Shooter(hardwareMap);
         intake = new Intake(hardwareMap);
     }
@@ -55,9 +58,9 @@ public class TulipBlue2P extends OpMode {
         follower.setTeleOpDrive(
                 -gamepad.left_stick_y,
                 -gamepad.left_stick_x,
-                -gamepad.right_stick_x * TURNING_MULTIPLIER,
-                true
+                -gamepad.right_stick_x * TURNING_MULTIPLIER
         );
+
 
 
         follower.update();

@@ -9,6 +9,7 @@ import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 import com.qualcomm.robotcore.hardware.Gamepad;
 
 import org.firstinspires.ftc.teamcode.Pedro.Constants;
+import org.firstinspires.ftc.teamcode.Subsystem.Drive;
 import org.firstinspires.ftc.teamcode.Subsystem.Intake;
 import org.firstinspires.ftc.teamcode.Subsystem.Shooter;
 
@@ -17,6 +18,7 @@ import org.firstinspires.ftc.teamcode.Subsystem.Shooter;
 public class Tulip1P extends OpMode {
     private Shooter shooter;
     private Intake intake;
+    private Drive drive;
 
     private Follower follower;
     private TelemetryManager telemetryM;
@@ -33,6 +35,7 @@ public class Tulip1P extends OpMode {
 
         shooter   = new Shooter(hardwareMap);
         intake    = new Intake(hardwareMap);
+        drive = new Drive(hardwareMap);
     }
 
     @Override
@@ -46,8 +49,7 @@ public class Tulip1P extends OpMode {
         follower.setTeleOpDrive(
                 -gamepad.left_stick_y,
                 -gamepad.left_stick_x,
-                -gamepad.right_stick_x,
-                    false);
+                -gamepad.right_stick_x);
 
         follower.update();
     }
@@ -73,8 +75,9 @@ public class Tulip1P extends OpMode {
     @Override
     public void loop()
     {
-        updateDrive(gamepad1);
+        //updateDrive(gamepad1);
 
+        drive.updateDrive(gamepad1);
         shooter.update(gamepad1);
 
         intake.update(gamepad1, gamepad2);

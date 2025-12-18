@@ -56,8 +56,7 @@ public class TulipRed2P extends OpMode {
         follower.setTeleOpDrive(
                 -gamepad.left_stick_y,
                 -gamepad.left_stick_x,
-                -gamepad.right_stick_x * TURNING_MULTIPLIER,
-                true
+                -gamepad.right_stick_x * TURNING_MULTIPLIER
         );
 
 
